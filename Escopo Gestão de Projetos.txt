@@ -1,0 +1,68 @@
+Usuarios 
+-IdUser (Int)
+-Classe (string)
+-Nome (string)
+-Cargo (string)
+-Setor (string)
+**Incluir subclasses de usuário, para herdar atributos e métodos de "Usuários", porém tendo atributos específicos
+
+*CriarUsuario()
+*EditarUsuario()
+*DeletarUsuario()
+*ExibirListaUsuarios()
+*ExibirTarefasAtribuidas()
+_________________________________________
+
+Tarefa
+-IdTarefa (Int)
+-Nome (string)
+-CriadoEm (datetime)
+-FinalizadoEm (datetime)
+-StatusTarefa (Status)
+-PrioridadeTarefa (Prioridade)
+-ProjetoTarefa (Projeto)
+-UsuarioTarefa (Usuario)
+
+*CriarTarefa()
+*EditarTarefa()
+*AtribuirTarefa ()
+*MudarStatus()
+*MudarPrioridade()
+*ExibirDetalhes()
+*AlterarProjeto()
+*AlterarUsuario()
+___________________________________________
+Status
+-Aberto
+-Em andamento 
+-Finalizado
+-Em atraso
+
+___________________________________________
+Prioridade 
+-Urgência
+-Alta
+-Média
+-Baixa
+
+*DefinirPrazoDeEntrega()
+___________________________________________
+Projeto
+-IdProjeto (Int)
+-NomeProjeto (string)
+-Participantes (List<Usuarios>)
+-IniciadoEm (datetime)
+-FinalizadoEm (datetime)
+
+*CriarProjeto()
+*MostrarDetalhes()
+*DeletarProjeto()
+*EditarProjeto()
+*IncluirParticipante()
+*DeletarParticipante()
+
+
+
+
+
+
