@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "9+ORo6sljqvMoTXMY+toLuqWUat++KX95gKNIsKaM/W3wLkGshJAjEuj7ivHpsv/ta1LS+o1qNG37xEkexrzgw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sn1089002\\Desktop\\Linha\\Linha.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sn1089002\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\sn1089002\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\sn1089002\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\sn1089002\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
+  ],
+  "logs": []
+}
