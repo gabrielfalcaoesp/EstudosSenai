@@ -1,6 +1,5 @@
 Usuarios 
 -IdUser (Int)
--Classe (string)
 -Nome (string)
 -Cargo (string)
 -Setor (string)
@@ -25,12 +24,12 @@ Tarefa
 
 *CriarTarefa()
 *EditarTarefa()
-*AtribuirTarefa ()
-*MudarStatus()
-*MudarPrioridade()
+*AtribuirTarefa () **
+*MudarStatus() **
+*MudarPrioridade() **
 *ExibirDetalhes()
-*AlterarProjeto()
-*AlterarUsuario()
+*AlterarProjeto() **
+*AlterarUsuario() **
 ___________________________________________
 Status
 -Aberto
@@ -55,11 +54,12 @@ Projeto
 -FinalizadoEm (datetime)
 
 *CriarProjeto()
-*MostrarDetalhes()
+*ListarProjetos()
 *DeletarProjeto()
 *EditarProjeto()
-*IncluirParticipante()
-*DeletarParticipante()
+*IncluirParticipante() **
+*DeletarParticipante() **
+
 
 
 

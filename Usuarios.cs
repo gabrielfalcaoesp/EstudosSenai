@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,11 +38,38 @@ namespace Linha
     }
     public class Usuarios
     {
+        public int IdUsuario { get; private set; }
+        public string Nome { get; private set; }
+        public string Cargo { get; private set; }
+        public string Setor { get; private set; }
+
+
+        public Usuarios (int idUsuario, string nome, string cargo, string setor)
+        {
+            IdUsuario = idUsuario;
+            Nome = nome;
+            Cargo = cargo;
+            Setor = setor;
+        }
+
         
         public static void CriarUsuario()
-        {
-            Console.WriteLine("Opção criar usuário");
+        {       
+            ListaUsuarios listaUsuarios = new ListaUsuarios();
+            int proximoId = listaUsuarios.TamanhoLista();
+            Console.WriteLine("Digite o nome do usuario que deseja adicionar: ");
+            string nomeInserido = Console.ReadLine();
+            Console.WriteLine("Digite o cargo do usuario que deseja adicionar: ");
+            string cargoInserido = Console.ReadLine();
+            Console.WriteLine("Digite o setor do usuario que deseja adicionar: ");
+            string setorInserido = Console.ReadLine();
+
+            Usuarios novoUsuario = new Usuarios(proximoId, nomeInserido, cargoInserido, setorInserido);
+            
+            listaUsuarios.AdicionarUsuario(novoUsuario);
+            Console.WriteLine("O usuário foi adicionado!\n");
         }
+
         public static void EditarUsuario()
         {
             Console.WriteLine("Opção editar usuário");
@@ -51,11 +80,41 @@ namespace Linha
         }
         public static void ListarUsuarios()
         {
-            Console.WriteLine("Opção listar usuário");
+            ListaUsuarios listaUsuarios = new ListaUsuarios();
+            listaUsuarios.TamanhoLista();
         }
         public static void TarefasUsuario()
         {
             Console.WriteLine("Opção exibir tarefas usuário");
+        }
+
+    }
+
+    public class ListaUsuarios 
+    {
+        
+
+        public void AdicionarUsuario(Usuarios usuario)
+        {
+            ListaDeUsuarios.Add(usuario);
+        }
+
+        public int TamanhoLista()
+        {
+            int tamanhoLista = ListaDeUsuarios.Count;
+            Console.WriteLine(tamanhoLista);
+            return tamanhoLista;
+        }
+
+        public void PercorrerLista()
+        {
+            foreach (var elemento in ListaDeUsuarios)
+            {
+                Console.WriteLine(elemento.IdUsuario);
+                Console.WriteLine(elemento.Nome);
+                Console.WriteLine(elemento.Setor);
+            }
+                
         }
 
     }

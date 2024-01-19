@@ -48,8 +48,8 @@ namespace Linha
             Dictionary<int, Action> dicionarioMenus = new Dictionary<int, Action>
             {
                 {1, () => UsuariosMenu.ExibirUsuariosMenu()},
-                {2, () => Tarefas.TarefasMenu() },
-                {3, () => Projetos.ProjetosMenu() }
+                {2, () => TarefasMenu.ExibirTarefasMenu() },
+                {3, () => ProjetosMenu.ExibirProjetosMenu() }
             };
 
             ExibirMenu(opcoesMenu, dicionarioMenus);

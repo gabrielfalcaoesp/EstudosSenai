@@ -27,3 +27,4 @@ C:\Users\sn1089002\Desktop\Linha\obj\Debug\net6.0\refint\Linha.dll
 C:\Users\sn1089002\Desktop\Linha\obj\Debug\net6.0\Linha.pdb
 C:\Users\sn1089002\Desktop\Linha\obj\Debug\net6.0\Linha.genruntimeconfig.cache
 C:\Users\sn1089002\Desktop\Linha\obj\Debug\net6.0\ref\Linha.dll
+C:\Users\sn1089002\Desktop\Linha\obj\Debug\net6.0\Linha.sourcelink.json
