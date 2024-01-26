@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Linha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc0ba16cbcac1c92bb1021dbb46ae9a32dcada54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bccf63440c7115a25496fa537712d945b5328f53")]
 [assembly: System.Reflection.AssemblyProductAttribute("Linha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Linha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

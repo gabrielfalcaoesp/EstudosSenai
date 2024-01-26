@@ -20,8 +20,9 @@ namespace Linha
 
             
 
-            if (dicionarioMenus.ContainsKey(int.Parse(menuDesejado)))
+            if (int.TryParse(menuDesejado, out int opcaoDesejada) && dicionarioMenus.ContainsKey(opcaoDesejada))
             {
+                Console.Clear();
                 dicionarioMenus[int.Parse(menuDesejado)].Invoke();
             }
 
@@ -36,6 +37,7 @@ namespace Linha
     {
         public void OpcoesMenu()
         {
+            Console.Clear();
             Console.WriteLine("*****Bem-vindo ao Linha, seu gerenciador de projetos pessoais*****\n");
 
             Dictionary<int, string> opcoesMenu = new Dictionary<int, string>
