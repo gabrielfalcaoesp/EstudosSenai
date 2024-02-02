@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,10 +77,10 @@ namespace Linha
             ListaUsuarios listaUsuarios = new ListaUsuarios();
             Console.Write("Digite o ID do usuário que deseja editar: ");
             int idUsuario = int.Parse(Console.ReadLine());
-            Console.Write("Qual campo você deseja editar?" +
-                "1. Nome" +
-                "2. Cargo" +
-                "3. Setor");
+            Console.Write("Qual campo você deseja editar? \n" +
+                "1. Nome \n" +
+                "2. Cargo \n" +
+                "3. Setor \n");
             int opcaoDeEdicao = int.Parse(Console.ReadLine());
             switch (opcaoDeEdicao)
             {
@@ -176,18 +176,44 @@ namespace Linha
         public void AlterarDadosUsuario(int idUsuario, string campoDeEdicao)
         {
             Usuarios usuario = ListaDeUsuarios[idUsuario];
-            object valor = ObterValorDaPropriedade(usuario, campoDeEdicao);
-            Console.Write($"Insira a alteração que você deseja fazer no campo {campoDeEdicao} do usuario {usuario}: ");
+            object valorPropriedade = ObterValorDaPropriedade(usuario, campoDeEdicao);
+            Console.Write($"Insira a alteração que você deseja fazer no campo {campoDeEdicao} do usuario {usuario.Nome}: ");
             string valorInserido = Console.ReadLine();
-            Console.Write($"O campo {valor} será alterado para {valorInserido}. Deseja confirmar a alteração? (s/n): ");
+            Console.Write($"O campo {valorPropriedade} será alterado para {valorInserido}. Deseja confirmar a alteração? (s/n): ");
+            string confirmacao = Console.ReadLine();
+            if (confirmacao.ToLower() == "s")
+            {
+                PropertyInfo propriedadeVariavel = typeof(Usuarios).GetProperty(campoDeEdicao);
+
+                if (propriedadeVariavel != null && propriedadeVariavel.CanWrite)
+                {
+                    try
+                    {
+                        object valorConvertido = Convert.ChangeType(valorInserido, propriedadeVariavel.PropertyType);
+
+                        propriedadeVariavel.SetValue(usuario, valorConvertido);
+                        Console.WriteLine($"Alteração feita com sucesso de {valorPropriedade} para {valorInserido}");
+                        Console.WriteLine("\nPressione qualquer tecla para voltar ao menu principal");
+                        ConsoleKeyInfo keyInfo = Console.ReadKey();
+                    }
+                    catch (InvalidCastException)
+                    {
+                        Console.WriteLine($"Erro: Impossível converter {valorInserido} para o tipo {propriedadeVariavel.PropertyType.Name}");
+                    }
+                }
+            }
+            else
+            {
+                Usuarios.EditarUsuario();
+            }
 
         }
 
-        static object ObterValorDaPropriedade(object objeto, string nomeDaPropriedade)
+        static object ObterValorDaPropriedade(object idUsuario, string nomeDaPropriedade)
         {
-            PropertyInfo propriedade = objeto.GetType().GetProperty(nomeDaPropriedade);
-                object valor = propriedade.GetValue(objeto);
-                return valor;
+            PropertyInfo propriedade = idUsuario.GetType().GetProperty(nomeDaPropriedade);
+                object valorPropriedade = propriedade.GetValue(idUsuario);
+                return valorPropriedade;
 
         }
 
